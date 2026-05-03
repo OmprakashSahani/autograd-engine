@@ -104,6 +104,12 @@ graph_size=200, backward_time=0.000370s
 graph_size=400, backward_time=0.001140s
 ```
 
+### Benchmark Graph
+
+![Backward Benchmark](results/backward_benchmark.png)
+
+---
+
 ### Observations
 
 * Backward pass time increases with computation graph size
