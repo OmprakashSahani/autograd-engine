@@ -18,6 +18,24 @@ The goal is to understand how modern ML frameworks handle gradients at a systems
 
 ---
 
+## Architecture
+
+The autograd engine builds a dynamic computation graph during the forward pass and performs reverse-mode automatic differentiation using a topological traversal of the graph.
+
+```mermaid
+flowchart TD
+    A[Input Values] --> B[Operations]
+    B --> C[Dynamic Computation Graph]
+    C --> D[Topological Ordering]
+    D --> E[Backward Pass]
+    E --> F[Gradient Accumulation]
+
+    B --> G[+, -, *, /, pow, tanh, exp]
+    C --> H[Value._prev]
+    E --> I[Value._backward]
+```
+---
+
 ## Features
 
 * Scalar reverse-mode autodiff
