@@ -1,5 +1,4 @@
 # Autograd Engine
-git add README.md
 A reverse-mode automatic differentiation engine built from scratch, designed to explore the core mechanics of backpropagation, computation graphs, and neural network training.
 
 ---
