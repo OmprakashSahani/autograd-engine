@@ -46,6 +46,8 @@ The goal is to understand how modern ML frameworks handle gradients at a systems
 | Scaling        | Graph size vs time              | Linear growth |
 | Training       | Loss (epoch 0 → 19)             | 0.90 → 0.76 |
 | Comparison     | Speed vs PyTorch (small graphs) | up to ~0.02x |
+| Scalability | Largest benchmarked graph size | 10,000 |
+| Engineering | Graph traversal | Recursive → iterative DFS |
 
 ---
 
@@ -110,10 +112,10 @@ PYTHONPATH=. python benchmarks/benchmark_scalar.py
 Results:
 
 ```
-graph_size=50,  backward_time=0.000072s
-graph_size=100, backward_time=0.000167s
-graph_size=200, backward_time=0.000370s
-graph_size=400, backward_time=0.001140s
+graph_size=100, backward_time=0.000323s
+graph_size=1000, backward_time=0.002406s
+graph_size=5000, backward_time=0.010410s
+graph_size=10000, backward_time=0.115016s
 ```
 
 ### Benchmark Graph
