@@ -110,6 +110,27 @@ graph_size=400, backward_time=0.001140s
 
 ---
 
+## PyTorch Comparison
+
+This benchmark compares backward-pass time for small scalar computation graphs.
+
+```bash
+PYTHONPATH=. python benchmarks/benchmark_compare.py
+```
+
+```
+graph_size=50,  my_engine=0.000077s, pytorch=0.003949s, ratio=0.02x
+graph_size=100, my_engine=0.000180s, pytorch=0.000842s, ratio=0.21x
+graph_size=200, my_engine=0.000388s, pytorch=0.002813s, ratio=0.14x
+graph_size=400, my_engine=0.000723s, pytorch=0.004878s, ratio=0.15x
+```
+
+## Interpretation
+
+For very small scalar graphs, this educational engine can appear faster because PyTorch includes additional framework overhead. These results should not be interpreted as general performance superiority over PyTorch. The purpose of this benchmark is to compare graph construction and backward traversal behavior on small scalar workloads.
+
+---
+
 ### Observations
 
 * Backward pass time increases with computation graph size
