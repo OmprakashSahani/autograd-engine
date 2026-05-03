@@ -16,6 +16,6 @@ def run_workload(n):
 
 
 if __name__ == "__main__":
-    for n in [50, 100, 200, 400]:
+    for n in [100, 1000, 5000, 10000]:
         elapsed = run_workload(n)
         print(f"graph_size={n}, backward_time={elapsed:.6f}s")

@@ -87,14 +87,24 @@ class Value:
         topo = []
         visited = set()
 
-        def build_topo(v):
-            if v not in visited:
-                visited.add(v)
-                for child in v._prev:
-                    build_topo(child)
-                topo.append(v)
+        stack = [(self, False)]
 
-        build_topo(self)
+        while stack:
+            node, expanded = stack.pop()
+
+            if expanded:
+                topo.append(node)
+                continue
+
+            if node in visited:
+                continue
+
+            visited.add(node)
+            stack.append((node, True))
+
+            for child in node._prev:
+                if child not in visited:
+                    stack.append((child, False))
 
         self.grad = 1.0
         for node in reversed(topo):
