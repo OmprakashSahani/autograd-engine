@@ -71,6 +71,22 @@ epoch 19, loss = 0.76
 
 ---
 
+## Gradient Checking
+
+This project validates autograd gradients against numerical finite-difference gradients.
+
+```bash
+PYTHONPATH=. python scripts/grad_check.py
+```
+
+Output:
+
+```
+numerical_grad = 7.000000000090267
+autograd_grad  = 7.0
+error          = 9.026734915096313e-11
+```
+
 ## Benchmark
 
 Run:
