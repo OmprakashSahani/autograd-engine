@@ -122,6 +122,12 @@ graph_size=10000, backward_time=0.115016s
 
 ![Backward Benchmark](results/backward_benchmark.png)
 
+### Scaling Behavior
+
+- Backward pass time increases approximately linearly with graph size  
+- Iterative traversal removes recursion depth limitations  
+- Successfully scaled from ~400 nodes (recursive limit) to 10,000 nodes  
+
 ---
 
 ## PyTorch Comparison
@@ -192,11 +198,10 @@ Output:
 
 ## Future Work
 
-* Iterative (non-recursive) graph traversal
-* Tensor support (beyond scalars)
-* Vectorized operations
-* GPU / parallel computation experiments
-* Distributed gradient aggregation (all-reduce simulation)
+- Identified recursion depth limitation in deep computation graphs  
+- Replaced recursive traversal with iterative DFS using an explicit stack  
+- Improved scalability from ~1k nodes to 10k+ nodes  
+- Re-benchmarked system after architectural change  
 
 ---
 
