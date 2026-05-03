@@ -1,0 +1,4 @@
+graph_size=50, backward_time=0.000076s
+graph_size=100, backward_time=0.000171s
+graph_size=200, backward_time=0.000360s
+graph_size=400, backward_time=0.000694s
