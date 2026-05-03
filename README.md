@@ -36,6 +36,14 @@ flowchart TD
 ```
 ---
 
+## Computation Graph Visualization
+
+Example computation graph for a simple expression after forward and backward pass:
+
+![Autograd Graph](results/graph.png)
+
+---
+
 ## Features
 
 * Scalar reverse-mode autodiff
