@@ -37,6 +37,18 @@ The goal is to understand how modern ML frameworks handle gradients at a systems
 
 ---
 
+## Key Metrics
+
+| Category        | Metric                          | Value |
+|----------------|---------------------------------|------:|
+| Correctness    | Gradient error                  | ~1e-10 |
+| Performance    | Backward time (400 nodes)       | 0.00114 s |
+| Scaling        | Graph size vs time              | Linear growth |
+| Training       | Loss (epoch 0 → 19)             | 0.90 → 0.76 |
+| Comparison     | Speed vs PyTorch (small graphs) | up to ~0.02x |
+
+---
+
 ## Example Usage
 
 ```python
