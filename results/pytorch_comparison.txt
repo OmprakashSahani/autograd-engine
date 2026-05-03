@@ -1,0 +1,4 @@
+graph_size=50, my_engine=0.000072s, pytorch=0.000898s, ratio=0.08x
+graph_size=100, my_engine=0.000193s, pytorch=0.000810s, ratio=0.24x
+graph_size=200, my_engine=0.000380s, pytorch=0.001567s, ratio=0.24x
+graph_size=400, my_engine=0.000777s, pytorch=0.003023s, ratio=0.26x
